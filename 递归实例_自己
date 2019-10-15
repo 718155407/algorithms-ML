@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Main {
+	static int m,flag;
+	static String result;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		m=sc.nextInt();
+		digui(m);		
+		System.out.println(result);
+}
+	public static void digui(int m) {
+		while(m != 0) {
+			flag = m%2;
+			if(flag!=0) {
+				if(result==null) {result = "1";}
+				else {result = "1"+result;}
+				m=(m-1)/2;
+			}
+			else {
+				if(result==null) {result = "2";}
+				else {result = "2"+result;}
+				m=(m-2)/2;
+			}
+			digui(m);//递归
+			break;
+		}
+	}}
